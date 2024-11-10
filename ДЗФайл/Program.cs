@@ -115,7 +115,9 @@ class Program
         int salePrice = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("введите стоимость отпуска");
         int holidayPrice = Convert.ToInt32(Console.ReadLine());
-        int butylki = (int)((normPrice * (1 - salePrice * 0.01)) / holidayPrice);
+        double sale = normPrice * (1 - salePrice / 100.0);
+        double SaveBottle = normPrice - salePrice;
+        int butylki = (int)(holidayPrice / SaveBottle);
         Console.WriteLine("количество бутылок: " + butylki);
     }
 }
